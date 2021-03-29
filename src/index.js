@@ -6,7 +6,7 @@ import App from './App';
 import Senpai from './personal';
 
 const routs = (
-  <HashRouter >
+  <HashRouter basename='/'>
      <Switch>
         <Route exact path="/"><App /></Route>
         <Route path="/senpaimode"><Senpai /></Route>
