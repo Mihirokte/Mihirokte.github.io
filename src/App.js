@@ -108,10 +108,10 @@ function Main() {
                   </Accordion.Collapse>
                 </Card>
                 <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
-                    This Website itslef!
+                  <Accordion.Toggle as={Card.Header} eventKey="1">
+                    This Website itself!
                   </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="0" class="t3">
+                  <Accordion.Collapse eventKey="1" class="t3">
                     <Card.Body>
                       Made using ReactJS and bootstrap and the personalised page contains some rigourous work on API integration as well.
                       <hr></hr>
