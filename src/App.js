@@ -107,6 +107,18 @@ function Main() {
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="0">
+                    This Website itslef!
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="0" class="t3">
+                    <Card.Body>
+                      Made using ReactJS and bootstrap and the personalised page contains some rigourous work on API integration as well.
+                      <hr></hr>
+                      <Github size={18} /><a href="https://github.com/Mihirokte/myweb" target="_blank" rel="noopener noreferrer" class="link-dark ms-3">For repository, Click here! (No not a Rick Roll)</a>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
               </Accordion>
 
 
