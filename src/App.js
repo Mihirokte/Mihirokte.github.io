@@ -206,7 +206,7 @@ class Senpai extends Component{
       MediaListCollection(userName: $username, type: $type) {
         lists {
           entries {
-            score(format: POINT_10)
+            score(format: POINT_10_DECIMAL)
             progress
             media {
               episodes
