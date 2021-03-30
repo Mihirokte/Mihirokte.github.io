@@ -180,7 +180,7 @@ class Senpai extends Component{
     wat: []
   }
 
-  getAnime = async (query, variables) => {
+  getWat = async (query, variables) => {
     try {
       const response = await axios.post('https://graphql.anilist.co', {
         query,
@@ -188,12 +188,28 @@ class Senpai extends Component{
       });
 
       this.setState(() => ({
-        com : sort(Object.values(response.data.data.MediaListCollection.lists[1].entries)),
-        wat : Object.values(response.data.data.MediaListCollection.lists[2].entries)
+        wat : Object.values(response.data.data.MediaListCollection.lists[0].entries)
+      }));
+      
+      console.log(Object.values(response.data.data.MediaListCollection.lists[0].entries));
+
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  getCom = async (query, variables) => {
+    try {
+      const response = await axios.post('https://graphql.anilist.co', {
+        query,
+        variables
+      });
+
+      this.setState(() => ({
+        com : sort(Object.values(response.data.data.MediaListCollection.lists[0].entries)),
       }));
 
-      console.log(this.state.com);
-      console.log(this.state.wat);
+      console.log(Object.values(response.data.data.MediaListCollection.lists[0].entries));
 
     } catch (error) {
         console.log(error);
@@ -202,8 +218,8 @@ class Senpai extends Component{
 
   componentDidMount() {
     const query = `
-    query ($username: String, $type: MediaType) {
-      MediaListCollection(userName: $username, type: $type) {
+    query ($username: String, $type: MediaType, $status: MediaListStatus) {
+      MediaListCollection(userName: $username, type: $type, status: $status) {
         lists {
           entries {
             score(format: POINT_10_DECIMAL)
@@ -220,8 +236,10 @@ class Senpai extends Component{
     }
     `;
     
-    const variables = {'username' : 'MihirOkte', 'type' : 'ANIME'};
-    this.getAnime(query, variables);
+    const variables = {'username' : 'MihirOkte', 'type' : 'ANIME', 'status': 'CURRENT'};
+    const variables2 = {'username' : 'MihirOkte', 'type' : 'ANIME', 'status': 'COMPLETED'};
+    this.getWat(query, variables);
+    this.getCom(query, variables2);
 
   }
 
