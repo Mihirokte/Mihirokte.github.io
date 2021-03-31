@@ -63,19 +63,19 @@ function Main() {
                   </Accordion.Toggle>
                 </Card>
                 <Card class="my-1">
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
+                  <Accordion.Toggle as={Card.Header} eventKey="1">
                     <div>
                       <div class="row mb-1"><div class="col t2">Technical Editor</div><div class="t4 col text-end">BSP, IIT Delhi</div></div>
                     </div>
                   </Accordion.Toggle>
                 </Card>
                 <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
+                  <Accordion.Toggle as={Card.Header} eventKey="2">
                     <div>
                       <div class="row mb-1"><div class="col t2">Representative & Executive</div><div class="t4 col text-end">IIT Delhi</div></div>
                     </div>
                   </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="0" class="t3">
+                  <Accordion.Collapse eventKey="2" class="t3">
                     <Card.Body>
                     <ul style={{fontSize:"0.9rem"}}>
                       <li class="listele2"><div class="row"><div class="col t2">Academic Mentor</div><div class="t4 col text-end">IIT Delhi</div></div></li>
