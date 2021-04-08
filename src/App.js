@@ -1,8 +1,9 @@
 import logo from './myphoto.jpg';
 import des from './desdev.png';
+import { AiFillBehanceCircle } from 'react-icons/ai';
 import { HashRouter, Route, Link } from 'react-router-dom';
-import { Github, Instagram, Facebook, Linkedin, Envelope, GeoAlt} from 'react-bootstrap-icons';
-import { Accordion, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Github, Instagram, Facebook, Linkedin, Envelope, GeoAlt, Discord} from 'react-bootstrap-icons';
+import { Accordion, Card, OverlayTrigger, Tooltip, Dropdown, DropdownButton } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React, { Component } from 'react';
@@ -28,6 +29,11 @@ function Main() {
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Personalised area for friends
+    </Tooltip>
+  );
+  const renderTooltip2 = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      My Spotify English Playlist
     </Tooltip>
   );
 
@@ -126,10 +132,11 @@ function Main() {
           </div>
           <div class="row bg text-white text-center t3 ps-4">
               <div class="row justify-content-center my-2">
-                <div class="col-1"><a role="button" href="https://drive.google.com/file/d/1eeSWgZw3fI1ncyeqtRUrGXiRGnvGHWhj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Github size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://drive.google.com/file/d/1eeSWgZw3fI1ncyeqtRUrGXiRGnvGHWhj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Linkedin size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://drive.google.com/file/d/1eeSWgZw3fI1ncyeqtRUrGXiRGnvGHWhj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Instagram size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://drive.google.com/file/d/1eeSWgZw3fI1ncyeqtRUrGXiRGnvGHWhj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Facebook size={18} /></a></div>
+                <div class="col-1"><a role="button" href="https://github.com/Mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Github size={18} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.linkedin.com/in/mihir-okte-a566a0143/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Linkedin size={18} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Instagram size={18} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.facebook.com/mihir.okte.3" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Facebook size={18} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.behance.net/mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><AiFillBehanceCircle size={21} /></a></div>
               </div>
               <div class="row justify-content-center mt-2">
                 <div class="col-sm-4 text-center" style={{fontSize:"0.9rem"}}><Envelope size={20} /><a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">&nbsp;&nbsp;mihirokte77@gmail.com</a></div>
@@ -145,6 +152,13 @@ function Main() {
       <OverlayTrigger
         placement="right"
         delay={{ show: 50, hide: 400 }}
+        overlay={renderTooltip2}
+      >
+        <button class="btn bg fixed-top m-3"><a href="https://open.spotify.com/playlist/1dTRYC5GDpppm5DfQMsyLt?si=XXf6CqvzRv-FeDyqtkmkWg" target="_blank" rel="noopener noreferrer" class="text-white" style={{textDecoration: "none"}}>My Music Taste</a></button>
+      </OverlayTrigger>
+      <OverlayTrigger
+        placement="right"
+        delay={{ show: 50, hide: 400 }}
         overlay={renderTooltip}
       >
         <button class="btn bg fixed-bottom m-3"><Link to="/senpaimode" class="text-white" style={{textDecoration: "none"}}>Senpai Mode</Link></button>
@@ -155,7 +169,7 @@ function Main() {
 
 
 const opts = {
-  height: '230',
+  height: '210',
   width: '380',
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
@@ -249,31 +263,33 @@ class Senpai extends Component{
   return (
     <div className="container-fluid">
       <div class="row">
-        <div class="col fw-normal py-3 text-white text-center t1 bg-2" style={{fontSize:"3rem", height:"30%" ,lineHeight:"80px"}}>ARA ARA! You come to see what's here<button class="btn bg-2 my-content" disabled>&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn bg col ms-auto "><Link to="/" class="text-white" style={{textDecoration: "none"}}>OH NO! Go back</Link></button>
+        <div class="col fw-normal py-3 text-white text-center t1 bg-2" style={{fontSize:"3rem", height:"30%"}}>ARA ARA! You come to see what's here<button class="btn bg-2 my-content" disabled>&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn bg col ms-auto "><Link to="/" class="text-white" style={{textDecoration: "none"}}>OH NO! Only Anime stuff here, Go Back</Link></button>
         </div>
       </div>
       <div class="row">
-      <div class="col pt-2 px-4 my-4 ms-3">
-          <div class="d-flex justify-content-between mb-2">
-            <div class="h3 t1 color">Currently Watching</div>
-          </div>
+        <div class="col">
+          <div class="col pt-2 px-4 my-4 ms-0">
+            <div class="d-flex justify-content-between mb-2">
+              <div class="h3 t1 color">Currently Watching</div>
+            </div>
 
-          <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"415px"}} id="example">
-            {wat ? wat.map((v) => (
-              <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                  <div class="t2 h5 mt-1">{Object.values(Object.values(Object.values(v)[2])[1])[0] ? Object.values(Object.values(Object.values(v)[2])[1])[0] : Object.values(Object.values(Object.values(v)[2])[1])[1]}</div>
-                  <div class="t4 ">Progress: {Object.values(v)[1]}/{Object.values(Object.values(v)[2])[0]}</div>
-                </div>
-                <span class="badge bg-primary rounded-pill mt-2">{Object.values(v)[0]}/10</span>
-              </li>
-              ))
-              :
-              <li class="list-group-item d-flex justify-content-between align-items-start">Loading .. </li>
-            }
-          </ul>
-
+            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"425px"}} id="example">
+              {wat ? wat.map((v) => (
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="t2 h5 mt-1">{Object.values(Object.values(Object.values(v)[2])[1])[0] ? Object.values(Object.values(Object.values(v)[2])[1])[0] : Object.values(Object.values(Object.values(v)[2])[1])[1]}</div>
+                    <div class="t4 ">Progress: {Object.values(v)[1]}/{Object.values(Object.values(v)[2])[0]}</div>
+                  </div>
+                  <span class="badge bg-primary rounded-pill mt-2">{Object.values(v)[0]}/10</span>
+                </li>
+                ))
+                :
+                <li class="list-group-item d-flex justify-content-between align-items-start">Loading .. </li>
+              }
+            </ul>
+            </div>
+          <a class="btn btn-success col ms-4 mb-4" href="https://myanimelist.net/profile/MihirOkte" target="_blank" rel="noopener noreferrer" role="button">My MAL Profile</a>
         </div>
         <div class="col">
           <div class="col pt-2 px-4 my-4">
@@ -281,7 +297,7 @@ class Senpai extends Component{
               <div class="h3 t1 color">My Fav Completed Anime</div>
             </div>
 
-            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"415px"}} id="example">
+            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"425px"}} id="example">
               {com ? com.map((v) => (
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
@@ -296,15 +312,15 @@ class Senpai extends Component{
             </ul>
           
           </div>
-          <a class="btn btn-success col ms-4" href="https://anilist.co/user/MihirOkte/animelist" target="_blank" rel="noopener noreferrer" role="button">My Anilist Profile</a>
+          <a class="btn btn-success col ms-4 mb-4" href="https://anilist.co/user/MihirOkte/animelist" target="_blank" rel="noopener noreferrer" role="button">My Anilist Profile</a>
         </div>
 
         <div class="col">
           <div class="col m-4 py-3 px-4 border rounded-3 border-2 border-primary">
             <div class="d-flex justify-content-between mb-2">
-              <div class="h2 t1 text-primary">Favourite Songs</div>
+              <div class="h2 t1 text-primary">Favourite Anime Music</div>
             </div>
-            <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll",height:"383px"}} id="example">
+            <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll",height:"390px"}} id="example">
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
                   My Favourite Anime Opening
@@ -315,7 +331,7 @@ class Senpai extends Component{
                       <YouTube videoId="dd7BILZcYAY" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top"/>
                       <div class="card-body">
                         <div>
-                          <div class="row h5"><div class="col t2">Hacking to the Gate</div><div class="t4 col text-end">Steins;Gate</div></div>
+                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">Hacking to the Gate</div><div class="t4 flex-fill text-end">Steins;Gate</div></div>
                         </div>
                       </div>
                     </div>
@@ -332,7 +348,7 @@ class Senpai extends Component{
                       <YouTube videoId="pCC6qbAnX00" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top" />
                       <div class="card-body">
                         <div>
-                          <div class="row h5"><div class="col t2">I Beg You</div><div class="t4 col text-end">Fate Heaven's Feel</div></div>
+                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">I Beg You</div><div class="t4 flex-fill text-end">Fate Heaven's Feel</div></div>
                         </div>
                       </div>
                     </div>
@@ -349,7 +365,7 @@ class Senpai extends Component{
                       <YouTube videoId="289H9XqmmpM" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top"/>
                       <div class="card-body">
                         <div>
-                          <div class="row h5"><div class="col t2">Ashes on the Fire</div><div class="t4 col text-end">Attack on Titan</div></div>
+                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">Ashes on the Fire</div><div class="t4 flex-fill text-end">Attack on Titan</div></div>
                         </div>
                       </div>
                     </div>
@@ -358,9 +374,9 @@ class Senpai extends Component{
               </Card>
             </Accordion>
           </div>
-          <div class="row mb-4">
-            <a class="btn btn-success col ms-3 me-1" href="https://open.spotify.com/playlist/2HbQZYH3hMnfCXfQFsCGtf?si=IVBISsSdROSPRaCkABNhPQ" target="_blank" rel="noopener noreferrer" role="button">Spotify Anime Songs Playlist</a>
-            <a class="btn btn-success col me-3 ms-1" href="https://open.spotify.com/playlist/6Ausj8kCb9GQ43Bwmn8scN?si=sEHVbI2UTGSvg2RN35_NIQ" target="_blank" rel="noopener noreferrer" role="button">Spotify Anime OST Playlist</a>
+          <div class="row mb-4 mx-2">
+            <a class="btn btn-success col me-1" href="https://open.spotify.com/playlist/2HbQZYH3hMnfCXfQFsCGtf?si=IVBISsSdROSPRaCkABNhPQ" target="_blank" rel="noopener noreferrer" role="button">Spotify Anime Songs Playlist</a>
+            <a class="btn btn-success col ms-1" href="https://open.spotify.com/playlist/6Ausj8kCb9GQ43Bwmn8scN?si=sEHVbI2UTGSvg2RN35_NIQ" target="_blank" rel="noopener noreferrer" role="button">Spotify Anime OST Playlist</a>
           </div>
         </div>
       </div>
@@ -370,6 +386,7 @@ class Senpai extends Component{
           <div class="col-2"><a role="button" href="https://www.snapchat.com/add/mihir_okte" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><SocialIcon url="https://www.snapchat.com/add/mihir_okte" bgColor="#7E1F86" fgColor="#ffffff" /></a></div>
           <div class="col-2"><a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><SocialIcon url="https://www.instagram.com/mihir_okte/" bgColor="#7E1F86" fgColor="#ffffff" /></a></div>
           <div class="col-2"><a role="button" href="https://www.facebook.com/mihir.okte.3" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><SocialIcon url="https://www.facebook.com/mihir.okte.3" bgColor="#7E1F86" fgColor="#ffffff"/></a></div>
+          <div class="col-2"><a role="button" href="copy_id_from_url_to_send_invite_Mihir_Okte#7650" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><Discord size={30} class="mt-2 pt-1" /></a></div>
         </div>
       </div>
     </div>
