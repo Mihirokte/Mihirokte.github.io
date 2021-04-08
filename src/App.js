@@ -50,7 +50,7 @@ function Main() {
             <div class="col-lg-7 pt-3 bg text-white t2 text-break" style={{fontWeight:"light", fontSize:"0.8rem"}}>
               Hoey! I am BTech Second Year Undergraduate in IIT Delhi from the Department of Mathematics and Computing. 
               I am learning programmer cum developer & a novice graphic designer, besides I am into algorithmic competitive programming(CP) and Web Dev is one of my strong holds.
-              The things I like are mainly anime, manga and designing. Sometimes I dance too. This is my portfolio.
+              The things I like are mainly anime, manga and designing. Sometimes I dance as well.
               <p class="t4 text-end pe-4">My academic CV is given below.</p> 
             </div>
           </div>
