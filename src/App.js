@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import { SocialIcon } from 'react-social-icons';
 import axios from 'axios';
+import Resume from './Mihir Okte CV.pdf';
 
 export default class App extends Component {
   render() {
@@ -96,7 +97,7 @@ function Main() {
             <div class="col pt-2 px-4 m-4">
                 <div class="d-flex justify-content-between">
                   <div class="h3 t1 color">Projects</div>
-                  <a role="button" href="https://drive.google.com/file/d/1eeSWgZw3fI1ncyeqtRUrGXiRGnvGHWhj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark mb-2">Resume (CV)</a>
+                  <a role="button" href="https://1drv.ms/b/s!As5LK1syYyiEkBM-thWGPEUQj9Wj?e=imdjCc" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark mb-2">Resume (CV)</a>
                 </div>
 
 
