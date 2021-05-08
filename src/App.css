@@ -68,10 +68,12 @@
 
 @media screen and (min-width: 0px) and (max-width: 350px) {
   .my-content { display: none; }  /* show it on small screens */
+  .my-text { margin-left: 0px;}
 }
 
 @media screen and (min-width: 351px) and (max-width: 1024px) {
   .my-content { display: block; }   /* hide it elsewhere */
+  .my-text { margin-left: 10px;}
 }
 
 @media screen and (min-width: 0px) and (max-width: 450px) {

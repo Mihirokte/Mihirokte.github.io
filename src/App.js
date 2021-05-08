@@ -3,14 +3,13 @@ import des from './desdev.png';
 import { AiFillBehanceCircle } from 'react-icons/ai';
 import { HashRouter, Route, Link } from 'react-router-dom';
 import { Github, Instagram, Facebook, Linkedin, Envelope, GeoAlt, Discord} from 'react-bootstrap-icons';
-import { Accordion, Card, OverlayTrigger, Tooltip, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Accordion, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import { SocialIcon } from 'react-social-icons';
 import axios from 'axios';
-import Resume from './Mihir Okte CV.pdf';
 
 export default class App extends Component {
   render() {
@@ -42,30 +41,37 @@ function Main() {
     <div className="container-fluid">
       <div className="row">
         <div class="col-3 hoverable" id="mycontent" style={{padding:"0px"}}>
-          <button class="normal" disabled><img src={des} alt="DEV+DES"  style={{width:"80%", margin:"auto auto"}}></img></button>
-          <img src={logo} alt="logo" class="hover border-end border-dark border-2" style={{maxWidth:"100%", height:"100vh"}}/>
+          <button class="normal p-0" disabled style={{maxWidth:"100%"}}><img src={des} alt="DEV+DES"  style={{width:"80%", margin:"auto auto"}}></img></button>
+          <img src={logo} alt="logo" class="hover" style={{height:"100%"}}/>
         </div>
         <div class="col">
           <div class="row">
-            <div class="fw-normal py-4 ps-4 text-white bg col t1" style={{fontSize:"5rem", height:"30%" ,lineHeight:"80px"}}>Mihir Okte</div>
-            <div class="col-lg-7 pt-3 bg text-white t2 text-break" style={{fontWeight:"light", fontSize:"0.8rem"}}>
+            <div class="fw-normal py-3 ps-4 text-white bg col t1" style={{fontSize:"5rem",lineHeight:"80px"}}>Mihir Okte</div>
+            <div class="col-lg-7 py-3 bg text-white t2 text-break" style={{fontWeight:"light", fontSize:"0.8rem"}}>
               Hoey! I am BTech Second Year Undergraduate in IIT Delhi from the Department of Mathematics and Computing. 
               I am learning programmer cum developer & a novice graphic designer, besides I am into algorithmic competitive programming(CP) and Web Dev is one of my strong holds.
               The things I like are mainly anime, manga and designing. Sometimes I dance as well.
-              <p class="t4 text-end pe-4">My academic CV is given below.</p> 
             </div>
           </div>
           <div class="row">
-            <div class="col m-4 py-3 px-4 border rounded-3 border-2 border-dark">
+            <div class="col my-3 mx-4 py-3 px-4 border rounded-3 border-2 border-dark">
                 <div class="d-flex justify-content-between mb-2">
                   <div class="h2 t1 color">How it's going till now</div>
                 </div>
-                <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll",height:"374px"}} id="example">
+                <Accordion defaultActiveKey="2" class="t2" style={{overflow:"hidden", overflowY:"scroll", height:"415px"}} id="example">
                 <Card class="my-1">
                   <Accordion.Toggle as={Card.Header} eventKey="0">
                     <div>
                       <div class="row mb-1"><div class="col t2">Web Developer</div><div class="t4 col text-end">Materate Pvt Ltd.</div></div>
                       <div class="row px-3" style={{fontSize:"0.8rem"}}>Designed and implemented and maintaining full responsive web portals for the analysis and testing of student’s progress and competency in mathematics.</div>
+                    </div>
+                  </Accordion.Toggle>
+                </Card>
+                <Card class="my-1">
+                  <Accordion.Toggle as={Card.Header} eventKey="3">
+                    <div>
+                      <div class="row mb-1"><div class="col t2">Frontend Web Developer</div><div class="t4 col text-end">SINC IITD</div></div>
+                      <div class="row px-3" style={{fontSize:"0.8rem"}}>Designed and implemented web portals for the students and startup to connect and to nurture the entrepenurship environment.</div>
                     </div>
                   </Accordion.Toggle>
                 </Card>
@@ -85,8 +91,9 @@ function Main() {
                   <Accordion.Collapse eventKey="2" class="t3">
                     <Card.Body>
                     <ul style={{fontSize:"0.9rem"}}>
+                      <li class="listele1"><div class="row"><div class="col t2">ANCC Executive</div><div class="t4 col text-end">Algo N Code Club IIT Delhi</div></div></li>
                       <li class="listele2"><div class="row"><div class="col t2">Academic Mentor</div><div class="t4 col text-end">IIT Delhi</div></div></li>
-                      <li class="listele1"><div class="row"><div class="col t2">Dance Representative</div><div class="t4 col text-end">Dance Club IITD</div></div></li>
+                      <li class="listele2"><div class="row"><div class="col t2">Dance Representative</div><div class="t4 col text-end">Dance Club IITD</div></div></li>
                       <li class="listele1"><div class="row"><div class="col t2">MathSoc Executive</div><div class="t4 col text-end">MathSoc IITD</div></div></li>
                     </ul>
                     </Card.Body>
@@ -94,14 +101,14 @@ function Main() {
                 </Card>
               </Accordion>
             </div>
-            <div class="col pt-2 px-4 m-4">
+            <div class="col pt-2 px-4 mx-4 my-3 ">
                 <div class="d-flex justify-content-between">
                   <div class="h3 t1 color">Projects</div>
                   <a role="button" href="https://1drv.ms/b/s!As5LK1syYyiEkBM-thWGPEUQj9Wj?e=imdjCc" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark mb-2">Resume (CV)</a>
                 </div>
 
 
-              <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll",height:"374px"}} id="example">
+              <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll", height:"415px"}} id="example">
                 <Card>
                   <Accordion.Toggle as={Card.Header} eventKey="0">
                     React Based Contributor Finder App
@@ -133,13 +140,13 @@ function Main() {
           </div>
           <div class="row bg text-white text-center t3 ps-4">
               <div class="row justify-content-center my-2">
-                <div class="col-1"><a role="button" href="https://github.com/Mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Github size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.linkedin.com/in/mihir-okte-a566a0143/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Linkedin size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Instagram size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.facebook.com/mihir.okte.3" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Facebook size={18} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.behance.net/mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><AiFillBehanceCircle size={21} /></a></div>
+                <div class="col-1"><a role="button" href="https://github.com/Mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Github size={20} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.linkedin.com/in/mihir-okte-a566a0143/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Linkedin size={20} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Instagram size={20} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.facebook.com/mihir.okte.3" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Facebook size={20} /></a></div>
+                <div class="col-1"><a role="button" href="https://www.behance.net/mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><AiFillBehanceCircle size={23} /></a></div>
               </div>
-              <div class="row justify-content-center mt-2">
+              <div class="row justify-content-center">
                 <div class="col-sm-4 text-center" style={{fontSize:"0.9rem"}}><Envelope size={20} /><a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">&nbsp;&nbsp;mihirokte77@gmail.com</a></div>
                 <div class="col-sm-4 text-center" style={{fontSize:"0.9rem"}}><GeoAlt size={20} />&nbsp;&nbsp;Gwalior, Madhya Pradesh, India</div>
               </div>
@@ -263,19 +270,19 @@ class Senpai extends Component{
 
   return (
     <div className="container-fluid">
-      <div class="row">
-        <div class="col fw-normal py-3 text-white text-center t1 bg-2" style={{fontSize:"3rem", height:"30%"}}>ARA ARA! You come to see what's here<button class="btn bg-2 my-content" disabled>&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn bg col ms-auto "><Link to="/" class="text-white" style={{textDecoration: "none"}}>OH NO! Only Anime stuff here, Go Back</Link></button>
+      <div class="row bg-2 py-3 justify-content-evenly" style={{height:"15%"}}>
+        <div class="col-lg-8 fw-normal align-middle text-white text-center t1 bg-2" style={{fontSize:"3rem"}}>ARA ARA! You come to see what's here
         </div>
+        <div class="col-lg-4 fw-normal align-middle text-white text-center my-auto py-1 t1"><button class="btn bg ms-auto"><Link to="/" class="text-white" style={{textDecoration: "none"}}>OH NO! Only Anime stuff here, Go Back</Link></button></div>
       </div>
-      <div class="row">
+      <div class="row" style={{height:"77%"}}>
         <div class="col">
           <div class="col pt-2 px-4 my-4 ms-0">
             <div class="d-flex justify-content-between mb-2">
               <div class="h3 t1 color">Currently Watching</div>
             </div>
 
-            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"425px"}} id="example">
+            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"428px"}} id="example">
               {wat ? wat.map((v) => (
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
@@ -298,7 +305,7 @@ class Senpai extends Component{
               <div class="h3 t1 color">My Fav Completed Anime</div>
             </div>
 
-            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"425px"}} id="example">
+            <ul class="list-group" style={{overflow:"hidden", overflowY:"scroll",height:"428px"}} id="example">
               {com ? com.map((v) => (
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
@@ -321,7 +328,7 @@ class Senpai extends Component{
             <div class="d-flex justify-content-between mb-2">
               <div class="h2 t1 text-primary">Favourite Anime Music</div>
             </div>
-            <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll",height:"390px"}} id="example">
+            <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll",height:"393px"}} id="example">
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
                   My Favourite Anime Opening
@@ -329,10 +336,10 @@ class Senpai extends Component{
                 <Accordion.Collapse eventKey="0">
                 <Card.Body>
                     <div class="card text-white bg-primary mb-3">
-                      <YouTube videoId="dd7BILZcYAY" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top"/>
+                      <YouTube videoId="oRAF2-Exzx4" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top"/>
                       <div class="card-body">
                         <div>
-                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">Hacking to the Gate</div><div class="t4 flex-fill text-end">Steins;Gate</div></div>
+                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">Hikari Are</div><div class="t4 flex-fill text-end">Haikyuu!</div></div>
                         </div>
                       </div>
                     </div>
@@ -346,10 +353,10 @@ class Senpai extends Component{
                 <Accordion.Collapse eventKey="1">
                   <Card.Body>
                     <div class="card text-white bg-primary mb-3">
-                      <YouTube videoId="pCC6qbAnX00" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top" />
+                      <YouTube videoId="SQBHr1kGmT0" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top" />
                       <div class="card-body">
                         <div>
-                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">I Beg You</div><div class="t4 flex-fill text-end">Fate Heaven's Feel</div></div>
+                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">Last Game</div><div class="t4 flex-fill text-end">Stein's Gate;0</div></div>
                         </div>
                       </div>
                     </div>
@@ -363,10 +370,10 @@ class Senpai extends Component{
                 <Accordion.Collapse eventKey="2">
                 <Card.Body>
                     <div class="card text-white bg-primary mb-3">
-                      <YouTube videoId="289H9XqmmpM" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top"/>
+                      <YouTube videoId="hoJ4qxcXz5w" opts={opts} onReady={(e) => e.target.pauseVideo()} className="card-img-top"/>
                       <div class="card-body">
                         <div>
-                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">Ashes on the Fire</div><div class="t4 flex-fill text-end">Attack on Titan</div></div>
+                          <div class="d-flex h5 fs-6"><div class="flex-fill t2">ThankAT</div><div class="t4 flex-fill text-end">Attack on Titan</div></div>
                         </div>
                       </div>
                     </div>
@@ -381,8 +388,8 @@ class Senpai extends Component{
           </div>
         </div>
       </div>
-      <div class="row bg-2 text-white text-center t3">
-        <div class="row justify-content-center my-1">
+      <div class="row bg-2 text-white text-center t3 py-1" style={{height:"8%"}}>
+        <div class="row justify-content-center">
           <div class="col-2"><a role="button" href="https://www.reddit.com/user/mihir_okte" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><SocialIcon url="https://www.reddit.com/user/mihir_okte" bgColor="#7E1F86" fgColor="#ffffff" /></a></div>
           <div class="col-2"><a role="button" href="https://www.snapchat.com/add/mihir_okte" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><SocialIcon url="https://www.snapchat.com/add/mihir_okte" bgColor="#7E1F86" fgColor="#ffffff" /></a></div>
           <div class="col-2"><a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg-2 text-center"><SocialIcon url="https://www.instagram.com/mihir_okte/" bgColor="#7E1F86" fgColor="#ffffff" /></a></div>
