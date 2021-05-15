@@ -188,7 +188,7 @@ const opts = {
 function sort(data){
   var result = [];
   data.map((v) => {
-    if(Object.values(v)[0] === 10){
+    if(Object.values(v)[0] > 9.5){
       result.push(v);
     }
   })
