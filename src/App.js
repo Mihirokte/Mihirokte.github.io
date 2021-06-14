@@ -103,11 +103,11 @@ function Main() {
     {name: "ReactJS", Lvl: "70", icon:"react-original"},
     {name: "HTML/CSS", Lvl: "85", icon:"html5-plain"},
     {name: "NodeJS", Lvl: "40", icon:"nodejs-plain"},
-    {name: "ExpressJS", Lvl: "30", icon:"express-original"},
-    {name: "MongoDB", Lvl: "20", icon:"mongodb-plain"},
+    {name: "ExpressJS", Lvl: "25", icon:"express-original"},
+    {name: "MongoDB", Lvl: "25", icon:"mongodb-plain"},
     {name: "MySQL", Lvl: "40", icon:"mysql-plain"},
     {name: "Android", Lvl: "40", icon:"android-plain"},
-    {name: "Firebase", Lvl: "20", icon:"firebase-plain"},
+    {name: "Firebase", Lvl: "25", icon:"firebase-plain"},
     {name: "ReactNative", Lvl: "60", icon:"react-original"},
     {name: "Git", Lvl:"70", icon:"git-plain"}
   ]
@@ -140,15 +140,12 @@ function Main() {
     <Carousel.Item>
       <Card style={{width: '16rem'}} style={{color:"#000000", border:"none"}}>
         <Card.Img variant="top" src="https://picsum.photos/300/200?random=1"/>
-        <Card.ImgOverlay >
-            <Card.Text class="text-end text-white fs-6">Random Image</Card.Text>
-        </Card.ImgOverlay>
         <Card.Body>
           <Card.Title>Contributors Retriever</Card.Title>
           <Card.Text>
             Made a React App which retrieves and display the github corntibutions and number of forks of various people in an organisation searched.
           </Card.Text>
-          <Button variant="primary"><Link to="https://github.com/Mihirokte/General-Apps" class="link3">Github Repository</Link></Button>
+          <Button href="https://github.com/Mihirokte/General-Apps" target="_blank" rel="noopener noreferrer">Github Repository</Button>
         </Card.Body>
       </Card>
     </Carousel.Item>
@@ -157,15 +154,14 @@ function Main() {
       <Carousel.Item>
         <Card style={{width: '16rem'}} style={{color:"#000000", border:"none"}}>
           <Card.Img variant="top" src="https://picsum.photos/300/200?random=2"/>
-          <Card.ImgOverlay >
-            <Card.Text class="text-end text-white fs-6">Random Image</Card.Text>
-          </Card.ImgOverlay>
           <Card.Body>
             <Card.Title>This site itself</Card.Title>
             <Card.Text>
               Made this site using React.js and several React based libraries.<br></br><span class="text-white">sj</span>
+              
+            <a href="https://github.com/Mihirokte/myweb"></a>
             </Card.Text>
-            <Button variant="primary"><Link to="https://github.com/Mihirokte/myweb" class="link3">Github Repository</Link></Button>
+            <Button href="https://github.com/Mihirokte/myweb" target="_blank" rel="noopener noreferrer">Github Repository</Button>
           </Card.Body>
         </Card>
       </Carousel.Item>
