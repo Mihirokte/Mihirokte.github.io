@@ -1,15 +1,16 @@
-import logo from './myphoto.jpg';
-import des from './desdev.png';
-import { AiFillBehanceCircle } from 'react-icons/ai';
 import { HashRouter, Route, Link } from 'react-router-dom';
-import { Github, Instagram, Facebook, Linkedin, Envelope, GeoAlt, Discord} from 'react-bootstrap-icons';
-import { Accordion, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Accordion, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import { SocialIcon } from 'react-social-icons';
 import axios from 'axios';
+import gojo from './mihir satoru.jpg';
+import React, {Component} from 'react';
+import Carousel from 'react-grid-carousel';
+import { Envelope, GeoAlt, Discord} from 'react-bootstrap-icons';
+import styled from "@emotion/styled/macro";
+
 
 export default class App extends Component {
   render() {
@@ -26,154 +27,305 @@ export default class App extends Component {
 
 function Main() {
 
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Personalised area for friends
-    </Tooltip>
-  );
-  const renderTooltip2 = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      My Spotify English Playlist
-    </Tooltip>
-  );
+  const about = `I am an upcoming Third-Year UG at IIT Delhi (Mathematics and Computing). 
+  I develop and design fully functional, creative and usability oriented websites, web apps
+  and cross-platform apps. I am interested in Algorithmic Problem Solving and have programmed
+  several algorithms based applications & scripts, and a regular competitive coder.
+  I love Anime and Manga and out of love I have made a section for that only in this website as
+  well. Feel free to connect with me.`
 
-  return (
-    <div className="container-fluid">
-      <div className="row">
-        <div class="col-3 hoverable" id="mycontent" style={{padding:"0px"}}>
-          <button class="normal p-0" disabled style={{maxWidth:"100%"}}><img src={des} alt="DEV+DES"  style={{width:"80%", margin:"auto auto"}}></img></button>
-          <img src={logo} alt="logo" class="hover" style={{height:"100%"}}/>
+  class TxtRotate {
+    constructor(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    }
+    tick() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      var that = this;
+      var delta = 300 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function () {
+        that.tick();
+      }, delta);
+    }
+  }
+  
+  
+  window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #ffffff }";
+    document.body.appendChild(css);
+  };
+
+  var Skill = [
+    {name: "C++", Lvl: "85", icon:"cplusplus-line"},
+    {name: "Python", Lvl: "70", icon:"python-plain"},
+    {name: "Java", Lvl: "75", icon:"java-plain"},
+    {name: "JavaScript", Lvl: "85", icon:"javascript-plain"},
+    {name: "MATLAB", Lvl: "85", icon:"matlab-plain"},
+    {name: "C", Lvl: "70", icon:"c-plain"},
+    {name: "ReactJS", Lvl: "90", icon:"react-original"},
+    {name: "HTML/CSS", Lvl: "95", icon:"html5-plain"},
+    {name: "NodeJS", Lvl: "60", icon:"nodejs-plain"},
+    {name: "ExpressJS", Lvl: "50", icon:"express-original"},
+    {name: "MongoDB", Lvl: "40", icon:"mongodb-plain"},
+    {name: "MySQL", Lvl: "60", icon:"mysql-plain"},
+    {name: "Android", Lvl: "60", icon:"android-plain"},
+    {name: "Firebase", Lvl: "40", icon:"firebase-plain"},
+    {name: "ReactNative", Lvl: "70", icon:"react-original"},
+    {name: "Git", Lvl:"80", icon:"git-plain"}
+  ]
+
+  function Skills(){
+    var list = [];
+    var i = Skill.length;
+
+    while(i--){
+    list.push(
+      <div class="row fs-2 align-items-center">
+        <div class="col-1">
+          <i class={`devicon-${Skill[15-i].icon}`}></i>
         </div>
-        <div class="col">
-          <div class="row">
-            <div class="fw-normal py-3 ps-4 text-white bg col t1" style={{fontSize:"5rem",lineHeight:"80px"}}>Mihir Okte</div>
-            <div class="col-lg-7 py-3 bg text-white t2 text-break" style={{fontWeight:"light", fontSize:"0.8rem"}}>
-              Hoey! I am BTech Second Year Undergraduate in IIT Delhi from the Department of Mathematics and Computing. 
-              I am learning programmer cum developer & a novice graphic designer, besides I am into algorithmic competitive programming(CP) and Web Dev is one of my strong holds.
-              The things I like are mainly anime, manga and designing. Sometimes I dance as well.
+        <div class="col-11 ps-lg-2 ps-4">
+          <div class="bg-white" style={{width:"100%"}}>
+            <div class="bg-info h-100 fs-6 px-4 fw-bolder py-1 d-flex flex-row" style={{width: `${Skill[15-i].Lvl}%`}}>
+              <div class="d-none d-lg-block">Level:</div><div>{Skill[15-i].Lvl}/100</div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col my-3 mx-4 py-3 px-4 border rounded-3 border-2 border-dark">
-                <div class="d-flex justify-content-between mb-2">
-                  <div class="h2 t1 color">How it's going till now</div>
-                </div>
-                <Accordion defaultActiveKey="2" class="t2" style={{overflow:"hidden", overflowY:"scroll", height:"415px"}} id="example">
-                <Card class="my-1">
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
-                    <div>
-                      <div class="row mb-1"><div class="col t2">Web Developer</div><div class="t4 col text-end">Materate Pvt Ltd.</div></div>
-                      <div class="row px-3" style={{fontSize:"0.8rem"}}>Designed and implemented and maintaining full responsive web portals for the analysis and testing of student’s progress and competency in mathematics.</div>
-                    </div>
-                  </Accordion.Toggle>
-                </Card>
-                <Card class="my-1">
-                  <Accordion.Toggle as={Card.Header} eventKey="3">
-                    <div>
-                      <div class="row mb-1"><div class="col t2">Frontend Web Developer</div><div class="t4 col text-end">SINC IITD</div></div>
-                      <div class="row px-3" style={{fontSize:"0.8rem"}}>Designed and implemented web portals for the students and startup to connect and to nurture the entrepenurship environment.</div>
-                    </div>
-                  </Accordion.Toggle>
-                </Card>
-                <Card class="my-1">
-                  <Accordion.Toggle as={Card.Header} eventKey="1">
-                    <div>
-                      <div class="row mb-1"><div class="col t2">Technical Editor</div><div class="t4 col text-end">BSP, IIT Delhi</div></div>
-                    </div>
-                  </Accordion.Toggle>
-                </Card>
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="2">
-                    <div>
-                      <div class="row mb-1"><div class="col t2">Representative & Executive</div><div class="t4 col text-end">IIT Delhi</div></div>
-                    </div>
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="2" class="t3">
-                    <Card.Body>
-                    <ul style={{fontSize:"0.9rem"}}>
-                      <li class="listele1"><div class="row"><div class="col t2">ANCC Executive</div><div class="t4 col text-end">Algo N Code Club IIT Delhi</div></div></li>
-                      <li class="listele2"><div class="row"><div class="col t2">Academic Mentor</div><div class="t4 col text-end">IIT Delhi</div></div></li>
-                      <li class="listele2"><div class="row"><div class="col t2">Dance Representative</div><div class="t4 col text-end">Dance Club IITD</div></div></li>
-                      <li class="listele1"><div class="row"><div class="col t2">MathSoc Executive</div><div class="t4 col text-end">MathSoc IITD</div></div></li>
-                    </ul>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
-            </div>
-            <div class="col pt-2 px-4 mx-4 my-3 ">
-                <div class="d-flex justify-content-between">
-                  <div class="h3 t1 color">Projects</div>
-                  <a role="button" href="https://1drv.ms/b/s!As5LK1syYyiEkBM-thWGPEUQj9Wj?e=imdjCc" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark mb-2">Resume (CV)</a>
-                </div>
-
-
-              <Accordion defaultActiveKey="0" class="t2" style={{overflow:"hidden", overflowY:"scroll", height:"415px"}} id="example">
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
-                    React Based Contributor Finder App
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="0" class="t3">
-                    <Card.Body>
-                      This App primarily focused upon finding number of contributors for a desired repository and subsequent details like number of forks, full name etc as well. I created this small app as an assignment of something.
-                      <hr></hr>
-                      <Github size={18} /><a href="https://github.com/Mihirokte/Mihirokte.github.io/tree/master/ocs" target="_blank" rel="noopener noreferrer" class="link-dark ms-3">For repository, Click here! (No not a Rick Roll)</a>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="1">
-                    This Website itself!
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="1" class="t3">
-                    <Card.Body>
-                      Made using ReactJS and bootstrap and the personalised page contains some rigourous work on API integration as well.
-                      <hr></hr>
-                      <Github size={18} /><a href="https://github.com/Mihirokte/myweb" target="_blank" rel="noopener noreferrer" class="link-dark ms-3">For repository, Click here! (No not a Rick Roll)</a>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
-
-
-            </div>
-          </div>
-          <div class="row bg text-white text-center t3 ps-4">
-              <div class="row justify-content-center my-2">
-                <div class="col-1"><a role="button" href="https://github.com/Mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Github size={20} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.linkedin.com/in/mihir-okte-a566a0143/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Linkedin size={20} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Instagram size={20} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.facebook.com/mihir.okte.3" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><Facebook size={20} /></a></div>
-                <div class="col-1"><a role="button" href="https://www.behance.net/mihirokte" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><AiFillBehanceCircle size={23} /></a></div>
-              </div>
-              <div class="row justify-content-center">
-                <div class="col-sm-4 text-center" style={{fontSize:"0.9rem"}}><Envelope size={20} /><a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">&nbsp;&nbsp;mihirokte77@gmail.com</a></div>
-                <div class="col-sm-4 text-center" style={{fontSize:"0.9rem"}}><GeoAlt size={20} />&nbsp;&nbsp;Gwalior, Madhya Pradesh, India</div>
-              </div>
-
-              <div class="row justify-content-center my-2 pb-1">
-                <div class="col-5 text-center">Designed and Developed by Mihir Okte</div>
-              </div>
           </div>
         </div>
       </div>
-      <OverlayTrigger
-        placement="right"
-        delay={{ show: 50, hide: 400 }}
-        overlay={renderTooltip2}
-      >
-        <button class="btn bg fixed-top m-3"><a href="https://open.spotify.com/playlist/1dTRYC5GDpppm5DfQMsyLt?si=XXf6CqvzRv-FeDyqtkmkWg" target="_blank" rel="noopener noreferrer" class="text-white" style={{textDecoration: "none"}}>My Music Taste</a></button>
-      </OverlayTrigger>
-      <OverlayTrigger
-        placement="right"
-        delay={{ show: 50, hide: 400 }}
-        overlay={renderTooltip}
-      >
-        <button class="btn bg fixed-bottom m-3"><Link to="/senpaimode" class="text-white" style={{textDecoration: "none"}}>Senpai Mode</Link></button>
-      </OverlayTrigger>
+    )}
+    return(list);
+  }
+
+  function projects(){
+    var list = []
+    list.push(
+    <Carousel.Item>
+      <Card style={{width: '16rem'}} style={{color:"#000000", border:"none"}}>
+        <Card.Img variant="top" src="https://picsum.photos/300/200?random=1"/>
+        <Card.ImgOverlay >
+            <Card.Text class="text-end text-white fs-6">Random Image</Card.Text>
+        </Card.ImgOverlay>
+        <Card.Body>
+          <Card.Title>Contributors Retriever</Card.Title>
+          <Card.Text>
+            Made a React App which retrieves and display the github corntibutions and number of forks of various people in an organisation searched.
+          </Card.Text>
+          <Button variant="primary"><Link to="" class="link3">Github Repository</Link></Button>
+        </Card.Body>
+      </Card>
+    </Carousel.Item>
+    )
+    list.push(
+      <Carousel.Item>
+        <Card style={{width: '16rem'}} style={{color:"#000000", border:"none"}}>
+          <Card.Img variant="top" src="https://picsum.photos/300/200?random=2"/>
+          <Card.ImgOverlay >
+            <Card.Text class="text-end text-white fs-6">Random Image</Card.Text>
+          </Card.ImgOverlay>
+          <Card.Body>
+            <Card.Title>This site itself</Card.Title>
+            <Card.Text>
+              Made this site using React.js and several React based libraries.<br></br><span class="text-white">sj</span>
+            </Card.Text>
+            <Button variant="primary"><Link to="" class="link3">Github Repository</Link></Button>
+          </Card.Body>
+        </Card>
+      </Carousel.Item>
+    )
+
+    return(list);
+  }
+
+  var allsteps = [
+    "Cleared NTSE in 2017",
+    "Cleared KVPY in 2018 - AIR 233",
+    "Cleared JEE Advanced in 2019 - AIR 913/95",
+    "Started learning Designing in 1st year",
+    "Graphic Design Intern at Enactus IITD in Summers'20",
+    "Joined BSP as Technical Executive at end of 1st year",
+    "Joined DanceClub IITD as Dance Rep at end of 1st year",
+    "Joined PFC IITD at end of 1st year",
+    "Joined MathSoc IITD as Executive",
+    "Worked as Project Contributor in MathMaterate in Web Development",
+    "Joined Algorithms & Coding Club as Executive",
+    "Got Qualified for Foreign Exchange AY 2021-22",
+    "Joined AAIP IITD as Creative Coordinator",
+    "Working as a SWE Intern at Craze technologies",
+    "Working as a Research Intern in Tokyo University of Technology"
+  ]
+
+  function steps(){
+    var list = [];
+    var i = allsteps.length-1;
+    var j = i;
+
+    list.push(     
+    <div class="zigzag-timeline__item fs-5 fw-bold pt-4 ps-5">
+      {allsteps[i]}
+      <div className="zigzag-timeline__milestone"></div>
+    </div>
+    )
+
+    while(i--){
+      list.push(          
+      <div class="zigzag-timeline__item fs-5 fw-bold pt-4 ps-5">
+      {allsteps[i]}
+      <div className="zigzag-timeline__milestone"></div>
+    </div>)
+    }
+
+    return(list);
+  }
+
+
+  const DisplayOver = styled.div({
+    height: "100%",
+    left: "0",
+    position: "absolute",
+    top: "0",
+    width: "100%",
+    zIndex: 2,
+    transition: "background-color 350ms ease",
+    backgroundColor: "transparent",
+    padding: "20px 20px 0 20px",
+    boxSizing: "border-box",
+  });
+
+
+  return (
+    <div className="container-fluid">
+      <div class="row pb-2 pt-4">
+
+        <div class="col-lg-6 col-12 text-lg-start text-center px-5">
+          <a role="button" href="https://www.behance.net/mihirokte" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://www.behance.net/mihirokte" bgColor="transparent" fgColor="#ffffff" size={16}/></a>
+          <a role="button" href="https://github.com/Mihirokte" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://github.com/Mihirokte" bgColor="transparent" fgColor="#ffffff" size={16} /></a>
+          <a role="button" href="https://www.linkedin.com/in/mihir-okte/" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://www.linkedin.com/in/mihir-okte/" bgColor="transparent" fgColor="#ffffff" size={16} /></a>
+          <a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><SocialIcon url="https://www.instagram.com/mihir_okte/" bgColor="transparent" fgColor="#ffffff" size={16}/></a>
+        </div>
+        <div class="col-lg-5 col-12 text-lg-end text-center align-middle my-auto px-lg-5 px-3">
+          <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center"><Link to="/" class='link1'>Home</Link></span>
+          <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center">Holy Space</span>
+          <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center">Resources</span>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-7 col-12" >
+          <div class="row px-lg-5 pt-lg-5 d-none d-lg-block pb-2">
+            <span
+              class="txt-rotate text-white"
+              data-period="2000"
+              data-rotate='[ "I am Mihir Okte.", "I program.", "I develop.", "I design." ]'
+              style={{fontSize:"6rem", fontWeight:"900"}}>
+            </span>
+          </div>
+          <div class="row px-lg-5 py-lg-3 py-2 px-4 text-white fs-5">
+              <div class="col-lg-8 col-12">{about}</div>
+          </div>
+          <div class="row px-lg-5 px-4 text-white fs-5">
+            <div class="col-2"><a role="button" href="https://1drv.ms/b/s!As5LK1syYyiEkQ0_3bNHoXdxHvHl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light mb-2">Resume</a></div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block p-5">
+          <img class="w-100" src={gojo} />
+        </div>
+      </div>
+
+      <div class="row py-5">
+        <div class="col-lg-5 col-12 text-start px-5">
+          <span style={{fontSize:"3rem", fontWeight:"900"}} class="mb-5">Skills</span>
+          <div class="mb-4"></div>
+          {Skills()}
+        </div>
+        <div class="col-lg-7 col-12 text-start px-5">
+          <span style={{fontSize:"3rem", fontWeight:"900"}} class="ps-3">Projects</span>
+          <div class="mb-4"></div>
+          <Carousel cols={2} rows={1} gap={10} loop>
+            {projects()}
+          </Carousel>
+          <div class="mb-4"></div>
+          <span style={{fontSize:"3rem", fontWeight:"900"}} class="ps-3">Things done</span>
+          <div class="mb-2"></div>
+          <div class="ps-3 scrolled" style={{height:"250px", overflowY:"scroll"}}>
+            {steps()}
+          </div>
+        </div>
+      </div>
+      <div class="row p-lg-5 p-3">
+          <div class="row my-2 fs-5">
+            <div class="col-lg col-12 ps-lg-2 p-0"><Envelope size={25} />&nbsp;&nbsp;me: <a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">mihirokte77@gmail.com</a></div>
+            <div class="col-lg col-12 text-lg-end p-0"><GeoAlt size={20} />&nbsp;&nbsp;Zanskar House, IIT Delhi<span class="d-none .d-lg-block .d-xl-block">, New Delhi, India</span></div>
+          </div>
+      </div>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const opts = {
