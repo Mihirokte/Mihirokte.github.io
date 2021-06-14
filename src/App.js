@@ -94,22 +94,22 @@ function Main() {
   };
 
   var Skill = [
-    {name: "C++", Lvl: "85", icon:"cplusplus-line"},
-    {name: "Python", Lvl: "70", icon:"python-plain"},
-    {name: "Java", Lvl: "75", icon:"java-plain"},
-    {name: "JavaScript", Lvl: "85", icon:"javascript-plain"},
-    {name: "MATLAB", Lvl: "85", icon:"matlab-plain"},
-    {name: "C", Lvl: "70", icon:"c-plain"},
-    {name: "ReactJS", Lvl: "90", icon:"react-original"},
-    {name: "HTML/CSS", Lvl: "95", icon:"html5-plain"},
-    {name: "NodeJS", Lvl: "60", icon:"nodejs-plain"},
-    {name: "ExpressJS", Lvl: "50", icon:"express-original"},
-    {name: "MongoDB", Lvl: "40", icon:"mongodb-plain"},
-    {name: "MySQL", Lvl: "60", icon:"mysql-plain"},
-    {name: "Android", Lvl: "60", icon:"android-plain"},
-    {name: "Firebase", Lvl: "40", icon:"firebase-plain"},
-    {name: "ReactNative", Lvl: "70", icon:"react-original"},
-    {name: "Git", Lvl:"80", icon:"git-plain"}
+    {name: "C++", Lvl: "65", icon:"cplusplus-line"},
+    {name: "Python", Lvl: "40", icon:"python-plain"},
+    {name: "Java", Lvl: "50", icon:"java-plain"},
+    {name: "JavaScript", Lvl: "60", icon:"javascript-plain"},
+    {name: "MATLAB", Lvl: "60", icon:"matlab-plain"},
+    {name: "C", Lvl: "50", icon:"c-plain"},
+    {name: "ReactJS", Lvl: "70", icon:"react-original"},
+    {name: "HTML/CSS", Lvl: "85", icon:"html5-plain"},
+    {name: "NodeJS", Lvl: "40", icon:"nodejs-plain"},
+    {name: "ExpressJS", Lvl: "30", icon:"express-original"},
+    {name: "MongoDB", Lvl: "20", icon:"mongodb-plain"},
+    {name: "MySQL", Lvl: "40", icon:"mysql-plain"},
+    {name: "Android", Lvl: "40", icon:"android-plain"},
+    {name: "Firebase", Lvl: "20", icon:"firebase-plain"},
+    {name: "ReactNative", Lvl: "60", icon:"react-original"},
+    {name: "Git", Lvl:"70", icon:"git-plain"}
   ]
 
   function Skills(){
@@ -148,7 +148,7 @@ function Main() {
           <Card.Text>
             Made a React App which retrieves and display the github corntibutions and number of forks of various people in an organisation searched.
           </Card.Text>
-          <Button variant="primary"><Link to="" class="link3">Github Repository</Link></Button>
+          <Button variant="primary"><Link to="https://github.com/Mihirokte/General-Apps" class="link3">Github Repository</Link></Button>
         </Card.Body>
       </Card>
     </Carousel.Item>
@@ -165,7 +165,7 @@ function Main() {
             <Card.Text>
               Made this site using React.js and several React based libraries.<br></br><span class="text-white">sj</span>
             </Card.Text>
-            <Button variant="primary"><Link to="" class="link3">Github Repository</Link></Button>
+            <Button variant="primary"><Link to="https://github.com/Mihirokte/myweb" class="link3">Github Repository</Link></Button>
           </Card.Body>
         </Card>
       </Carousel.Item>
