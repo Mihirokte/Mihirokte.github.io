@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import Carousel from 'react-grid-carousel';
 import { Envelope, GeoAlt, Discord} from 'react-bootstrap-icons';
 import styled from "@emotion/styled/macro";
+import all from "./figures/all.png";
 
 
 export default class App extends Component {
@@ -185,7 +186,8 @@ function Main() {
     "Got Qualified for Foreign Exchange AY 2021-22",
     "Joined AAIP IITD as Creative Coordinator",
     "Working as a SWE Intern at Craze technologies",
-    "Working as a Research Intern in Tokyo University of Technology"
+    "Working as a Research Intern in Tokyo University of Technology",
+    "Joined Design Club IITD as CTM"
   ]
 
   function steps(){
@@ -322,8 +324,6 @@ function Main() {
 
 
 
-
-
 const opts = {
   height: '210',
   width: '380',
@@ -342,6 +342,8 @@ function sort(data){
   })
   return result;
 }
+
+
 
 class Senpai extends Component{
 
@@ -417,7 +419,11 @@ class Senpai extends Component{
     const {com, wat} = this.state;
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid px-0">
+      <div class="row py-4" style={{height:"600px", overflowY:"scroll"}}> 
+        <img src={all} style={{width:"100%"}}/>
+        Credits : <a href="https://www.reddit.com/r/anime/comments/o16ipm/rebuild_of_the_ultimate_anime_recommendation/?utm_medium=android_app&utm_source=share"  target="_blank" rel="noopener noreferrer">Reddit r/anime u/FetchFrosh</a>
+      </div>
       <div class="row bg-2 py-3 justify-content-evenly" style={{height:"15%"}}>
         <div class="col-lg-8 fw-normal align-middle text-white text-center t1 bg-2" style={{fontSize:"3rem"}}>ARA ARA! You come to see what's here
         </div>
