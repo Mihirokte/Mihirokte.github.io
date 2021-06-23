@@ -96,21 +96,21 @@ function Main() {
 
   var Skill = [
     {name: "C++", Lvl: "65", icon:"cplusplus-line"},
-    {name: "Python", Lvl: "40", icon:"python-plain"},
+    {name: "Python", Lvl: "50", icon:"python-plain"},
     {name: "Java", Lvl: "50", icon:"java-plain"},
     {name: "JavaScript", Lvl: "60", icon:"javascript-plain"},
     {name: "MATLAB", Lvl: "60", icon:"matlab-plain"},
-    {name: "C", Lvl: "50", icon:"c-plain"},
+    {name: "C", Lvl: "60", icon:"c-plain"},
     {name: "ReactJS", Lvl: "70", icon:"react-original"},
     {name: "HTML/CSS", Lvl: "85", icon:"html5-plain"},
+    {name: "ReactNative", Lvl: "60", icon:"react-original"},
+    {name: "Git", Lvl:"70", icon:"git-plain"},
     {name: "NodeJS", Lvl: "40", icon:"nodejs-plain"},
     {name: "ExpressJS", Lvl: "25", icon:"express-original"},
     {name: "MongoDB", Lvl: "25", icon:"mongodb-plain"},
     {name: "MySQL", Lvl: "40", icon:"mysql-plain"},
     {name: "Android", Lvl: "40", icon:"android-plain"},
     {name: "Firebase", Lvl: "25", icon:"firebase-plain"},
-    {name: "ReactNative", Lvl: "60", icon:"react-original"},
-    {name: "Git", Lvl:"70", icon:"git-plain"}
   ]
 
   function Skills(){
@@ -238,7 +238,7 @@ function Main() {
           <a role="button" href="https://www.linkedin.com/in/mihir-okte/" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://www.linkedin.com/in/mihir-okte/" bgColor="transparent" fgColor="#ffffff" size={16} /></a>
           <a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><SocialIcon url="https://www.instagram.com/mihir_okte/" bgColor="transparent" fgColor="#ffffff" size={16}/></a>
         </div>
-        <div class="col-lg-5 col-12 text-lg-end text-center align-middle my-auto px-lg-5 px-3">
+        <div class="col-lg-6 col-12 text-lg-end text-center align-middle my-auto px-lg-5 px-3">
           <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center"><Link to="/" class='link1'>Home</Link></span>
           <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center">Holy Space</span>
           <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center">Resources</span>
@@ -246,26 +246,30 @@ function Main() {
       </div>
 
 
-      <div class="row">
-        <div class="col-lg-7 col-12" >
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-12" >
           <div class="row px-lg-5 pt-lg-5 d-none d-lg-block pb-2">
             <span
               class="txt-rotate text-white"
               data-period="2000"
               data-rotate='[ "I am Mihir Okte.", "I program.", "I develop.", "I design." ]'
-              style={{fontSize:"6rem", fontWeight:"900"}}>
+              style={{fontSize:"8rem", fontWeight:"900"}}>
             </span>
           </div>
           <div class="row px-lg-5 py-lg-3 py-2 px-4 text-white fs-5">
-              <div class="col-lg-8 col-12">{about}</div>
+              <div class="col-12">{about}</div>
           </div>
           <div class="row px-lg-5 px-4 text-white fs-5">
-            <div class="col-2"><a role="button" href="https://1drv.ms/b/s!As5LK1syYyiEkQ0_3bNHoXdxHvHl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light mb-2">Resume</a></div>
+            <div class="col-2"><a role="button" href="https://1drv.ms/b/s!As5LK1syYyiEkQ0_3bNHoXdxHvHl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light mb-2 btn-lg">Resume</a></div>
           </div>
         </div>
-        <div class="col-lg-4 d-none d-lg-block p-5">
+        {/* <div class="col-lg-4 d-none d-lg-block p-5">
           <img class="w-100" src={gojo} />
-        </div>
+        </div> */}
+      </div>
+
+      <div class="py-5 my-5">
+
       </div>
 
       <div class="row py-5">
@@ -288,7 +292,7 @@ function Main() {
           </div>
         </div>
       </div>
-      <div class="row p-lg-5 p-3">
+      <div class="row px-lg-5 pb-lg-4 p-3">
           <div class="row my-2 fs-5">
             <div class="col-lg col-12 ps-lg-2 p-0"><Envelope size={25} />&nbsp;&nbsp;me: <a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">mihirokte77@gmail.com</a></div>
             <div class="col-lg col-12 text-lg-end p-0"><GeoAlt size={20} />&nbsp;&nbsp;Zanskar House, IIT Delhi<span class="d-none .d-lg-block .d-xl-block">, New Delhi, India</span></div>
