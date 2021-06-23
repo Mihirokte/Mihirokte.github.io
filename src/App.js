@@ -230,15 +230,15 @@ function Main() {
 
   return (
     <div className="container-fluid">
-      <div class="row pb-2 pt-4">
+      <div class="row pb-2 pt-4 justify-content-center">
 
-        <div class="col-lg-6 col-12 text-lg-start text-center px-5">
+        <div class="col-lg-4 col-12 text-lg-start text-center px-5">
           <a role="button" href="https://www.behance.net/mihirokte" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://www.behance.net/mihirokte" bgColor="transparent" fgColor="#ffffff" size={16}/></a>
           <a role="button" href="https://github.com/Mihirokte" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://github.com/Mihirokte" bgColor="transparent" fgColor="#ffffff" size={16} /></a>
           <a role="button" href="https://www.linkedin.com/in/mihir-okte/" target="_blank" rel="noopener noreferrer" class="text-white text-center"><SocialIcon url="https://www.linkedin.com/in/mihir-okte/" bgColor="transparent" fgColor="#ffffff" size={16} /></a>
           <a role="button" href="https://www.instagram.com/mihir_okte/" target="_blank" rel="noopener noreferrer" class="text-white bg text-center"><SocialIcon url="https://www.instagram.com/mihir_okte/" bgColor="transparent" fgColor="#ffffff" size={16}/></a>
         </div>
-        <div class="col-lg-6 col-12 text-lg-end text-center align-middle my-auto px-lg-5 px-3">
+        <div class="col-lg-4 col-12 text-lg-end text-center align-middle my-auto px-lg-5 px-3">
           <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center"><Link to="/" class='link1'>Home</Link></span>
           <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center">Holy Space</span>
           <span class="p-lg-3 p-2 fs-4 fw-bolder link1 text-center">Resources</span>
