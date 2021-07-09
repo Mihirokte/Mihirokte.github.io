@@ -109,8 +109,8 @@ function Main() {
     {name: "ExpressJS", Lvl: "25", icon:"express-original"},
     {name: "MongoDB", Lvl: "25", icon:"mongodb-plain"},
     {name: "MySQL", Lvl: "40", icon:"mysql-plain"},
-    {name: "Android", Lvl: "40", icon:"android-plain"},
-    {name: "Firebase", Lvl: "25", icon:"firebase-plain"},
+    {name: "Android", Lvl: "60", icon:"android-plain"},
+    {name: "Firestore", Lvl: "40", icon:"firebase-plain"},
   ]
 
   function Skills(){
@@ -272,19 +272,21 @@ function Main() {
 
       </div>
 
-      <div class="row py-5">
-        <div class="col-lg-5 col-12 text-start px-5">
+      <div class="row py-4 justify-content-center">
+        <div class="col-lg-7 col-12 text-start px-5">
           <span style={{fontSize:"3rem", fontWeight:"900"}} class="mb-5">Skills</span>
           <div class="mb-4"></div>
-          {Skills()}
+          <div style={{height:"350px", overflowY:"scroll", overflowX:"hidden"}} class="scrolled">{Skills()}</div>
         </div>
+      </div>
+      <div class="row py-4 justify-content-center">
         <div class="col-lg-7 col-12 text-start px-5">
           <span style={{fontSize:"3rem", fontWeight:"900"}} class="ps-3">Projects</span>
           <div class="mb-4"></div>
           <Carousel cols={2} rows={1} gap={10} loop>
             {projects()}
           </Carousel>
-          <div class="mb-4"></div>
+          <div class="mb-5"></div>
           <span style={{fontSize:"3rem", fontWeight:"900"}} class="ps-3">Things done</span>
           <div class="mb-2"></div>
           <div class="ps-3 scrolled" style={{height:"250px", overflowY:"scroll"}}>
@@ -293,9 +295,9 @@ function Main() {
         </div>
       </div>
       <div class="row px-lg-5 pb-lg-4 p-3">
-          <div class="row my-2 fs-5">
-            <div class="col-lg col-12 ps-lg-2 p-0"><Envelope size={25} />&nbsp;&nbsp;me: <a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">mihirokte77@gmail.com</a></div>
-            <div class="col-lg col-12 text-lg-end p-0"><GeoAlt size={20} />&nbsp;&nbsp;Zanskar House, IIT Delhi<span class="d-none .d-lg-block .d-xl-block">, New Delhi, India</span></div>
+          <div class="row my-2 fs-5 justify-content-center">
+            <div class="col-lg-4 col-12 ps-lg-2 p-0"><Envelope size={25} />&nbsp;&nbsp;me: <a role="button" class="text-white text-break" style={{textDecoration: "none"}} href = "mailto: mihirokte77@gmail.com">mihirokte77@gmail.com</a></div>
+            <div class="col-lg-4 col-12 text-lg-end p-0"><GeoAlt size={20} />&nbsp;&nbsp;Zanskar House, IIT Delhi<span class="d-none .d-lg-block .d-xl-block">, New Delhi, India</span></div>
           </div>
       </div>
     </div>
